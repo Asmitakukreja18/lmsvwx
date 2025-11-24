@@ -1,0 +1,135 @@
+/* PolicyCard.css - Clean, Professional & Card Design (Best Version) */
+
+.policy-wrapper {
+  min-height: 100vh;
+
+  padding: 90px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.policy-card {
+  background: #ffffff;
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(108, 99, 255, 0.18);
+}
+
+.policy-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 7px;
+
+  border-radius: 26px 26px 0 0;
+  z-index: 1;
+}
+
+.policy-content {
+  padding: 4rem 4.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.policy-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-align: center;
+  background: linear-gradient(90deg, #2e25db, #0f068d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.policy-intro {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #475569;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+.policy-section {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 3.2rem 0 1.2rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.policy-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 4px;
+  background: #6c63ff;
+  border-radius: 4px;
+}
+
+.policy-text {
+  font-size: 1.05rem;
+  line-height: 1.82;
+  color: #475569;
+  margin-bottom: 1.2rem;
+}
+
+.policy-list {
+  margin: 1.5rem 0;
+  padding-left: 1.4rem;
+}
+
+.policy-list li {
+  font-size: 1.05rem;
+  color: #334155;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  padding-left: 6px;
+}
+
+.policy-list li strong {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.policy-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #6c63ff, transparent);
+  margin: 3.5rem 0;
+  border-radius: 2px;
+}
+
+.policy-footer {
+  text-align: center;
+  padding: 2.5rem 0 0;
+  border-top: 1px dashed #cbd5e1;
+  color: #64748b;
+  font-size: 1.05rem;
+}
+
+.policy-footer strong {
+  color: #6c63ff;
+  font-weight: 700;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .policy-content { padding: 3rem 2.8rem; }
+  .policy-title { font-size: 2.4rem; }
+  .policy-section { font-size: 1.55rem; }
+}
+
+@media (max-width: 480px) {
+  .policy-content { padding: 2.5rem 2rem; }
+  .policy-title { font-size: 2.1rem; }
+  .policy-text, .policy-list li, .policy-footer { font-size: 1rem; }
+}

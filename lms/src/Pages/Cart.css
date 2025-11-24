@@ -1,0 +1,158 @@
+/* PAGE WRAPPER */
+.cart-page {
+  padding: 50px 8%;
+  font-family: "Poppins", sans-serif;
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #001d3d;
+}
+
+/* EMPTY CART */
+.empty-cart {
+  text-align: center;
+  padding: 40px;
+  background: #fafafa;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.empty-cart p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.return-btn {
+  padding: 10px 25px;
+  background: #ff5722;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.return-btn:hover {
+  background: #e44d1c;
+}
+
+/* CART TABLE */
+.cart-container {
+  margin-top: 40px;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cart-table th {
+  background: #f4f4f4;
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.cart-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table img {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  margin-right: 10px;
+}
+
+.product-data {
+  display: flex;
+  align-items: center;
+}
+
+.remove {
+  background: none;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ff0000;
+}
+
+/* COUPON ROW */
+.coupon-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.coupon-row input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.apply-btn {
+  padding: 12px 20px;
+  background: #4a68f7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.apply-btn:hover {
+  background: #3e5de0;
+}
+
+/* SUMMARY BOX */
+.summary-box {
+  margin-top: 25px;
+  padding: 25px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.summary-box h3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.checkout-btn {
+  display: block;
+  margin-top: 20px;
+  padding: 12px;
+  text-align: center;
+  background: #ff5722;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.checkout-btn:hover {
+  background: #e44d1c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .cart-table th, .cart-table td {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  .product-data {
+    flex-direction: column;
+    text-align: center;
+  }
+}

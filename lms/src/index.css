@@ -1,0 +1,51 @@
+.cart-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge {
+    background: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 3px 7px;
+    position: absolute;
+    top: -8px;
+    right: -10px;
+}
+
+.navContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 30px;
+}
+
+/* HERO IMAGE RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-img {
+        width: 60%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-img {
+        width: 50%;
+    }
+}
+
+/* HIDE HERO IMAGE ON SMALL SCREENS */
+@media (max-width: 768px) {
+    .hero-img {
+        display: none;
+    }
+}
+
+@media (max-width: 968px) {
+    .hero-img {
+        display: none;
+    }
+}

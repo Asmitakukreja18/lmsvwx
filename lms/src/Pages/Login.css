@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box {
+  background: white;
+  padding: 40px 35px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.login-box h2 {
+  font-size: 1.5rem;
+  color: #1c1c1c;
+  margin-bottom: 25px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #d3d6de;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-box input:focus {
+  border-color: #4a68f7;
+  box-shadow: 0 0 5px rgba(74, 104, 247, 0.3);
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.options label {
+  color: #222;
+}
+
+.forgot {
+  color: #6b6b6b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.forgot:hover {
+  color: #4a68f7;
+}
+
+.btn {
+  width: 100%;
+  background-color: #4a68f7;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+button:hover {
+  background-color: #3e5de0;
+}
+
+.register-text {
+  text-align: center;
+  margin-top: 15px;
+  color: #444;
+  font-size: 0.9rem;
+}
+.register-text a {
+  color: #3e5de0;
+  text-decoration: none;
+  font-weight: 500;
+}
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 25px;
+  }
+  .login-box h2 {
+    font-size: 1.3rem;
+  }
+}
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #222;
+  cursor: pointer;
+}
+
+.remember-me input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: #6b6b6b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.forgot-password:hover {
+  color: #4a68f7;
+}
