@@ -141,7 +141,7 @@ const Courses = () => {
 
               return (
                 <div className="course-card" key={course.id}>
-                  {/* Image */}
+               
                   <div className="course-image">
                     <img
                       src={course.image}

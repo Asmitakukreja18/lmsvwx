@@ -1,16 +1,16 @@
-// src/Store/UserSlice.js
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
-  name: 'user',
+  name: "user",
   initialState: {
     user: null,
     purchasedCourses: [],
   },
   reducers: {
     login: (state, action) => {
+      // payload: { user: {...}, purchasedCourses: [...] }
       state.user = action.payload.user;
-      state.purchasedCourses = action.payload.user.purchasedCourses || [];
+      state.purchasedCourses = action.payload.purchasedCourses || [];
     },
     logout: (state) => {
       state.user = null;

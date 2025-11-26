@@ -1,46 +1,44 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from 'react-redux'; 
-import { login } from '../Store/UserSlice'; 
+import { useDispatch } from "react-redux";
+import { login } from "../Store/UserSlice";
+import { loginUser } from "../api/Authapi";
 import "./Login.css";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password })
-      });
+      const res = await loginUser({ email, password });
+      const data = res.data;
 
-      const data = await res.json();
-      if (data.success) {
-       
-        dispatch(login({
-          user: data.user,
-          purchasedCourses: data.purchasedCourses || []
-        }));
+      if (data.message === "Login successful") {
+        dispatch(
+          login({
+            user: data.student,
+            purchasedCourses: data.student.purchasedCourses || [],
+          })
+        );
 
-        localStorage.setItem("user", JSON.stringify(data.user));
+        localStorage.setItem("user", JSON.stringify(data.student));
         alert("Login successful!");
         navigate("/courses");
       } else {
-        setError(data.error);
+        setError(data.message || "Login failed");
       }
     } catch (err) {
-      setError("Network error");
+      setError(err.response?.data?.message || "Network error");
     }
+  };
 
-  }
   return (
     <div className="container-xxl py-2 mt-4">
       <div className="container">
@@ -54,10 +52,10 @@ const Login = () => {
 
                 <form onSubmit={handleLogin}>
                   <input
-                    type="text"
-                    placeholder="Username or Email Address"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required
                   />
                   <input
@@ -68,17 +66,18 @@ const Login = () => {
                     required
                   />
 
-      <div className="login-options">
-  <label className="remember-me">
-    <input type="checkbox" />   <span>Keep me signed in</span>
- 
-  </label>
+                  <div className="login-options">
+                    <label className="remember-me">
+                      <input type="checkbox" /> <span>Keep me signed in</span>
+                    </label>
+                    <a href="#" className="forgot-password">
+                      Forgot Password?
+                    </a>
+                  </div>
 
-  <a href="#" className="forgot-password">Forgot Password?</a>
-</div>
-
-
-                  <button className="btn"  type="submit">Sign In</button>
+                  <button className="btn" type="submit">
+                    Sign In
+                  </button>
 
                   <p className="register-text">
                     Don't have an account? <Link to="/register">Register Now</Link>

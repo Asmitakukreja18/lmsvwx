@@ -11,7 +11,7 @@ const Checkout = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Redux se cart aur totalPrice le rahe hain
+ 
   const { items: cart, totalPrice } = useSelector((state) => state.cart);
   const singleCourse = location.state?.course;
 
@@ -19,27 +19,22 @@ const Checkout = () => {
   const [upiId, setUpiId] = useState("");
   const [upiProvider, setUpiProvider] = useState("@ybl");
 
-  // Final amount decide karo
+
   const finalPrice = singleCourse ? singleCourse.price : totalPrice;
 
-  // Payment complete hone pe
   const handlePayment = (e) => {
     e.preventDefault();
 
-    // Success message
     alert("Payment Successful! Course(s) Unlocked!");
 
-    // Purchased courses user ko de do
     if (singleCourse) {
       dispatch(addPurchasedCourse(singleCourse.id));
     } else {
       cart.forEach(item => dispatch(addPurchasedCourse(item.id)));
     }
 
-    // Cart khali kar do
     dispatch(clearCart());
 
-    // Courses page pe bhej do
     navigate('/courses', { replace: true });
   };
 
@@ -135,7 +130,6 @@ const Checkout = () => {
         </div>
       </div>
 
-      {/* Right Section - Summary & Payment */}
       <div className="right-section">
         <h2 className="summary-title">Summary</h2>
 
